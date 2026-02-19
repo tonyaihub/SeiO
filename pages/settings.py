@@ -14,6 +14,34 @@ if st.button("Сохранить ключи"):
     save_setting("elevenlabs_key", elevenlabs_key)
     st.success("Сохранено!")
 
+
+st.divider()
+st.subheader("🐦 X (Twitter) API")
+st.markdown("Нужен API v2 с правами `write`.")
+tw_cons_key = st.text_input("Consumer Key", value=get_setting("twitter_consumer_key") or "", type="password")
+tw_cons_sec = st.text_input("Consumer Secret", value=get_setting("twitter_consumer_secret") or "", type="password")
+tw_acc_tok = st.text_input("Access Token", value=get_setting("twitter_access_token") or "", type="password")
+tw_acc_sec = st.text_input("Access Token Secret", value=get_setting("twitter_access_secret") or "", type="password")
+
+if st.button("Сохранить Twitter ключи"):
+    save_setting("twitter_consumer_key", tw_cons_key)
+    save_setting("twitter_consumer_secret", tw_cons_sec)
+    save_setting("twitter_access_token", tw_acc_tok)
+    save_setting("twitter_access_secret", tw_acc_sec)
+    st.success("Ключи Twitter сохранены")
+
+st.divider()
+st.subheader("📘 Facebook Graph API")
+st.markdown("Нужен `Page Access Token` (не User Token).")
+fb_token = st.text_input("Page Access Token", value=get_setting("facebook_page_token") or "", type="password")
+fb_page = st.text_input("Page ID", value=get_setting("facebook_page_id") or "")
+
+if st.button("Сохранить Facebook ключи"):
+    save_setting("facebook_page_token", fb_token)
+    save_setting("facebook_page_id", fb_page)
+    st.success("Ключи Facebook сохранены")
+
+
 st.divider()
 
 st.subheader("🎨 Бренд-кит")
