@@ -9,3 +9,6 @@ pytrends
 plotly
 matplotlib
 reportlab
+tweepy
+facebook-sdk
+requests
