@@ -12,3 +12,4 @@ reportlab
 tweepy
 facebook-sdk
 requests
+psycopg2-binary
